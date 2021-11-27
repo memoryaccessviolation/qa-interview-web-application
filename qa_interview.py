@@ -6,6 +6,7 @@ To learn more, see the README.md of this application.
 """
 
 from flask import Flask, jsonify, render_template, request
+import os
 
 app = Flask(__name__)
 
@@ -43,4 +44,4 @@ def privacy():
 
 #---START OF SCRIPT
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=6464, debug= True)
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 6464), debug= True)
